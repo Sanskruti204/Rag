@@ -1,0 +1,11 @@
+streamlit
+PyPDF2
+yfinance
+sympy
+langchain-ollama
+langchain-chroma
+langchain-text-splitters
+langchain-core
+langchain-community
+chromadb
+pandas
