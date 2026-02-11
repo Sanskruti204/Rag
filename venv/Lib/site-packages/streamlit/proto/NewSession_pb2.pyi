@@ -202,6 +202,25 @@ class Config(_message.Message):
     VIEWER: Config.ToolbarMode.ValueType  # 2
     MINIMAL: Config.ToolbarMode.ValueType  # 3
 
+    class _ShowErrorLinks:
+        ValueType = _typing.NewType("ValueType", _builtins.int)
+        V: _TypeAlias = ValueType  # noqa: Y015
+
+    class _ShowErrorLinksEnumTypeWrapper(_enum_type_wrapper._EnumTypeWrapper[Config._ShowErrorLinks.ValueType], _builtins.type):
+        DESCRIPTOR: _descriptor.EnumDescriptor
+        SHOW_ERROR_LINKS_UNSPECIFIED: Config._ShowErrorLinks.ValueType  # 0
+        SHOW_ERROR_LINKS_AUTO: Config._ShowErrorLinks.ValueType  # 1
+        SHOW_ERROR_LINKS_TRUE: Config._ShowErrorLinks.ValueType  # 2
+        SHOW_ERROR_LINKS_FALSE: Config._ShowErrorLinks.ValueType  # 3
+
+    class ShowErrorLinks(_ShowErrorLinks, metaclass=_ShowErrorLinksEnumTypeWrapper):
+        """See config option "client.showErrorLinks"."""
+
+    SHOW_ERROR_LINKS_UNSPECIFIED: Config.ShowErrorLinks.ValueType  # 0
+    SHOW_ERROR_LINKS_AUTO: Config.ShowErrorLinks.ValueType  # 1
+    SHOW_ERROR_LINKS_TRUE: Config.ShowErrorLinks.ValueType  # 2
+    SHOW_ERROR_LINKS_FALSE: Config.ShowErrorLinks.ValueType  # 3
+
     GATHER_USAGE_STATS_FIELD_NUMBER: _builtins.int
     MAX_CACHED_MESSAGE_AGE_FIELD_NUMBER: _builtins.int
     MAPBOX_TOKEN_FIELD_NUMBER: _builtins.int
@@ -209,6 +228,7 @@ class Config(_message.Message):
     HIDE_TOP_BAR_FIELD_NUMBER: _builtins.int
     HIDE_SIDEBAR_NAV_FIELD_NUMBER: _builtins.int
     TOOLBAR_MODE_FIELD_NUMBER: _builtins.int
+    SHOW_ERROR_LINKS_FIELD_NUMBER: _builtins.int
     gather_usage_stats: _builtins.bool
     """See config option "browser.gatherUsageStats"."""
     max_cached_message_age: _builtins.int
@@ -222,6 +242,7 @@ class Config(_message.Message):
     hide_sidebar_nav: _builtins.bool
     """See config option "client.showSidebarNavigation"."""
     toolbar_mode: Global___Config.ToolbarMode.ValueType
+    show_error_links: Global___Config.ShowErrorLinks.ValueType
     def __init__(
         self,
         *,
@@ -232,8 +253,9 @@ class Config(_message.Message):
         hide_top_bar: _builtins.bool = ...,
         hide_sidebar_nav: _builtins.bool = ...,
         toolbar_mode: Global___Config.ToolbarMode.ValueType = ...,
+        show_error_links: Global___Config.ShowErrorLinks.ValueType = ...,
     ) -> None: ...
-    _ClearFieldArgType: _TypeAlias = _typing.Literal["allow_run_on_save", b"allow_run_on_save", "gather_usage_stats", b"gather_usage_stats", "hide_sidebar_nav", b"hide_sidebar_nav", "hide_top_bar", b"hide_top_bar", "mapbox_token", b"mapbox_token", "max_cached_message_age", b"max_cached_message_age", "toolbar_mode", b"toolbar_mode"]  # noqa: Y015
+    _ClearFieldArgType: _TypeAlias = _typing.Literal["allow_run_on_save", b"allow_run_on_save", "gather_usage_stats", b"gather_usage_stats", "hide_sidebar_nav", b"hide_sidebar_nav", "hide_top_bar", b"hide_top_bar", "mapbox_token", b"mapbox_token", "max_cached_message_age", b"max_cached_message_age", "show_error_links", b"show_error_links", "toolbar_mode", b"toolbar_mode"]  # noqa: Y015
     def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
 
 Global___Config: _TypeAlias = Config  # noqa: Y015
@@ -314,6 +336,7 @@ class CustomThemeConfig(_message.Message):
     DATAFRAME_HEADER_BACKGROUND_COLOR_FIELD_NUMBER: _builtins.int
     CHART_CATEGORICAL_COLORS_FIELD_NUMBER: _builtins.int
     CHART_SEQUENTIAL_COLORS_FIELD_NUMBER: _builtins.int
+    CHART_DIVERGING_COLORS_FIELD_NUMBER: _builtins.int
     RED_COLOR_FIELD_NUMBER: _builtins.int
     ORANGE_COLOR_FIELD_NUMBER: _builtins.int
     YELLOW_COLOR_FIELD_NUMBER: _builtins.int
@@ -414,6 +437,8 @@ class CustomThemeConfig(_message.Message):
     @_builtins.property
     def chart_sequential_colors(self) -> _containers.RepeatedScalarFieldContainer[_builtins.str]: ...
     @_builtins.property
+    def chart_diverging_colors(self) -> _containers.RepeatedScalarFieldContainer[_builtins.str]: ...
+    @_builtins.property
     def sidebar(self) -> Global___CustomThemeConfig:
         """Theme sections:"""
 
@@ -459,6 +484,7 @@ class CustomThemeConfig(_message.Message):
         dataframe_header_background_color: _builtins.str | None = ...,
         chart_categorical_colors: _abc.Iterable[_builtins.str] | None = ...,
         chart_sequential_colors: _abc.Iterable[_builtins.str] | None = ...,
+        chart_diverging_colors: _abc.Iterable[_builtins.str] | None = ...,
         red_color: _builtins.str | None = ...,
         orange_color: _builtins.str | None = ...,
         yellow_color: _builtins.str | None = ...,
@@ -486,7 +512,7 @@ class CustomThemeConfig(_message.Message):
     ) -> None: ...
     _HasFieldArgType: _TypeAlias = _typing.Literal["_base_font_size", b"_base_font_size", "_base_font_weight", b"_base_font_weight", "_base_radius", b"_base_radius", "_blue_background_color", b"_blue_background_color", "_blue_color", b"_blue_color", "_blue_text_color", b"_blue_text_color", "_border_color", b"_border_color", "_button_radius", b"_button_radius", "_code_background_color", b"_code_background_color", "_code_font_size", b"_code_font_size", "_code_font_weight", b"_code_font_weight", "_code_text_color", b"_code_text_color", "_dark", b"_dark", "_dataframe_border_color", b"_dataframe_border_color", "_dataframe_header_background_color", b"_dataframe_header_background_color", "_gray_background_color", b"_gray_background_color", "_gray_color", b"_gray_color", "_gray_text_color", b"_gray_text_color", "_green_background_color", b"_green_background_color", "_green_color", b"_green_color", "_green_text_color", b"_green_text_color", "_light", b"_light", "_link_color", b"_link_color", "_link_underline", b"_link_underline", "_orange_background_color", b"_orange_background_color", "_orange_color", b"_orange_color", "_orange_text_color", b"_orange_text_color", "_red_background_color", b"_red_background_color", "_red_color", b"_red_color", "_red_text_color", b"_red_text_color", "_show_sidebar_border", b"_show_sidebar_border", "_show_widget_border", b"_show_widget_border", "_sidebar", b"_sidebar", "_violet_background_color", b"_violet_background_color", "_violet_color", b"_violet_color", "_violet_text_color", b"_violet_text_color", "_yellow_background_color", b"_yellow_background_color", "_yellow_color", b"_yellow_color", "_yellow_text_color", b"_yellow_text_color", "base_font_size", b"base_font_size", "base_font_weight", b"base_font_weight", "base_radius", b"base_radius", "blue_background_color", b"blue_background_color", "blue_color", b"blue_color", "blue_text_color", b"blue_text_color", "border_color", b"border_color", "button_radius", b"button_radius", "code_background_color", b"code_background_color", "code_font_size", b"code_font_size", "code_font_weight", b"code_font_weight", "code_text_color", b"code_text_color", "dark", b"dark", "dataframe_border_color", b"dataframe_border_color", "dataframe_header_background_color", b"dataframe_header_background_color", "font_sizes", b"font_sizes", "gray_background_color", b"gray_background_color", "gray_color", b"gray_color", "gray_text_color", b"gray_text_color", "green_background_color", b"green_background_color", "green_color", b"green_color", "green_text_color", b"green_text_color", "light", b"light", "link_color", b"link_color", "link_underline", b"link_underline", "orange_background_color", b"orange_background_color", "orange_color", b"orange_color", "orange_text_color", b"orange_text_color", "radii", b"radii", "red_background_color", b"red_background_color", "red_color", b"red_color", "red_text_color", b"red_text_color", "show_sidebar_border", b"show_sidebar_border", "show_widget_border", b"show_widget_border", "sidebar", b"sidebar", "violet_background_color", b"violet_background_color", "violet_color", b"violet_color", "violet_text_color", b"violet_text_color", "yellow_background_color", b"yellow_background_color", "yellow_color", b"yellow_color", "yellow_text_color", b"yellow_text_color"]  # noqa: Y015
     def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-    _ClearFieldArgType: _TypeAlias = _typing.Literal["_base_font_size", b"_base_font_size", "_base_font_weight", b"_base_font_weight", "_base_radius", b"_base_radius", "_blue_background_color", b"_blue_background_color", "_blue_color", b"_blue_color", "_blue_text_color", b"_blue_text_color", "_border_color", b"_border_color", "_button_radius", b"_button_radius", "_code_background_color", b"_code_background_color", "_code_font_size", b"_code_font_size", "_code_font_weight", b"_code_font_weight", "_code_text_color", b"_code_text_color", "_dark", b"_dark", "_dataframe_border_color", b"_dataframe_border_color", "_dataframe_header_background_color", b"_dataframe_header_background_color", "_gray_background_color", b"_gray_background_color", "_gray_color", b"_gray_color", "_gray_text_color", b"_gray_text_color", "_green_background_color", b"_green_background_color", "_green_color", b"_green_color", "_green_text_color", b"_green_text_color", "_light", b"_light", "_link_color", b"_link_color", "_link_underline", b"_link_underline", "_orange_background_color", b"_orange_background_color", "_orange_color", b"_orange_color", "_orange_text_color", b"_orange_text_color", "_red_background_color", b"_red_background_color", "_red_color", b"_red_color", "_red_text_color", b"_red_text_color", "_show_sidebar_border", b"_show_sidebar_border", "_show_widget_border", b"_show_widget_border", "_sidebar", b"_sidebar", "_violet_background_color", b"_violet_background_color", "_violet_color", b"_violet_color", "_violet_text_color", b"_violet_text_color", "_yellow_background_color", b"_yellow_background_color", "_yellow_color", b"_yellow_color", "_yellow_text_color", b"_yellow_text_color", "background_color", b"background_color", "base", b"base", "base_font_size", b"base_font_size", "base_font_weight", b"base_font_weight", "base_radius", b"base_radius", "blue_background_color", b"blue_background_color", "blue_color", b"blue_color", "blue_text_color", b"blue_text_color", "body_font", b"body_font", "border_color", b"border_color", "button_radius", b"button_radius", "chart_categorical_colors", b"chart_categorical_colors", "chart_sequential_colors", b"chart_sequential_colors", "code_background_color", b"code_background_color", "code_font", b"code_font", "code_font_size", b"code_font_size", "code_font_weight", b"code_font_weight", "code_text_color", b"code_text_color", "dark", b"dark", "dataframe_border_color", b"dataframe_border_color", "dataframe_header_background_color", b"dataframe_header_background_color", "font", b"font", "font_faces", b"font_faces", "font_sizes", b"font_sizes", "font_sources", b"font_sources", "gray_background_color", b"gray_background_color", "gray_color", b"gray_color", "gray_text_color", b"gray_text_color", "green_background_color", b"green_background_color", "green_color", b"green_color", "green_text_color", b"green_text_color", "heading_font", b"heading_font", "heading_font_sizes", b"heading_font_sizes", "heading_font_weights", b"heading_font_weights", "light", b"light", "link_color", b"link_color", "link_underline", b"link_underline", "orange_background_color", b"orange_background_color", "orange_color", b"orange_color", "orange_text_color", b"orange_text_color", "primary_color", b"primary_color", "radii", b"radii", "red_background_color", b"red_background_color", "red_color", b"red_color", "red_text_color", b"red_text_color", "secondary_background_color", b"secondary_background_color", "show_sidebar_border", b"show_sidebar_border", "show_widget_border", b"show_widget_border", "sidebar", b"sidebar", "skeleton_background_color", b"skeleton_background_color", "text_color", b"text_color", "violet_background_color", b"violet_background_color", "violet_color", b"violet_color", "violet_text_color", b"violet_text_color", "widget_background_color", b"widget_background_color", "widget_border_color", b"widget_border_color", "yellow_background_color", b"yellow_background_color", "yellow_color", b"yellow_color", "yellow_text_color", b"yellow_text_color"]  # noqa: Y015
+    _ClearFieldArgType: _TypeAlias = _typing.Literal["_base_font_size", b"_base_font_size", "_base_font_weight", b"_base_font_weight", "_base_radius", b"_base_radius", "_blue_background_color", b"_blue_background_color", "_blue_color", b"_blue_color", "_blue_text_color", b"_blue_text_color", "_border_color", b"_border_color", "_button_radius", b"_button_radius", "_code_background_color", b"_code_background_color", "_code_font_size", b"_code_font_size", "_code_font_weight", b"_code_font_weight", "_code_text_color", b"_code_text_color", "_dark", b"_dark", "_dataframe_border_color", b"_dataframe_border_color", "_dataframe_header_background_color", b"_dataframe_header_background_color", "_gray_background_color", b"_gray_background_color", "_gray_color", b"_gray_color", "_gray_text_color", b"_gray_text_color", "_green_background_color", b"_green_background_color", "_green_color", b"_green_color", "_green_text_color", b"_green_text_color", "_light", b"_light", "_link_color", b"_link_color", "_link_underline", b"_link_underline", "_orange_background_color", b"_orange_background_color", "_orange_color", b"_orange_color", "_orange_text_color", b"_orange_text_color", "_red_background_color", b"_red_background_color", "_red_color", b"_red_color", "_red_text_color", b"_red_text_color", "_show_sidebar_border", b"_show_sidebar_border", "_show_widget_border", b"_show_widget_border", "_sidebar", b"_sidebar", "_violet_background_color", b"_violet_background_color", "_violet_color", b"_violet_color", "_violet_text_color", b"_violet_text_color", "_yellow_background_color", b"_yellow_background_color", "_yellow_color", b"_yellow_color", "_yellow_text_color", b"_yellow_text_color", "background_color", b"background_color", "base", b"base", "base_font_size", b"base_font_size", "base_font_weight", b"base_font_weight", "base_radius", b"base_radius", "blue_background_color", b"blue_background_color", "blue_color", b"blue_color", "blue_text_color", b"blue_text_color", "body_font", b"body_font", "border_color", b"border_color", "button_radius", b"button_radius", "chart_categorical_colors", b"chart_categorical_colors", "chart_diverging_colors", b"chart_diverging_colors", "chart_sequential_colors", b"chart_sequential_colors", "code_background_color", b"code_background_color", "code_font", b"code_font", "code_font_size", b"code_font_size", "code_font_weight", b"code_font_weight", "code_text_color", b"code_text_color", "dark", b"dark", "dataframe_border_color", b"dataframe_border_color", "dataframe_header_background_color", b"dataframe_header_background_color", "font", b"font", "font_faces", b"font_faces", "font_sizes", b"font_sizes", "font_sources", b"font_sources", "gray_background_color", b"gray_background_color", "gray_color", b"gray_color", "gray_text_color", b"gray_text_color", "green_background_color", b"green_background_color", "green_color", b"green_color", "green_text_color", b"green_text_color", "heading_font", b"heading_font", "heading_font_sizes", b"heading_font_sizes", "heading_font_weights", b"heading_font_weights", "light", b"light", "link_color", b"link_color", "link_underline", b"link_underline", "orange_background_color", b"orange_background_color", "orange_color", b"orange_color", "orange_text_color", b"orange_text_color", "primary_color", b"primary_color", "radii", b"radii", "red_background_color", b"red_background_color", "red_color", b"red_color", "red_text_color", b"red_text_color", "secondary_background_color", b"secondary_background_color", "show_sidebar_border", b"show_sidebar_border", "show_widget_border", b"show_widget_border", "sidebar", b"sidebar", "skeleton_background_color", b"skeleton_background_color", "text_color", b"text_color", "violet_background_color", b"violet_background_color", "violet_color", b"violet_color", "violet_text_color", b"violet_text_color", "widget_background_color", b"widget_background_color", "widget_border_color", b"widget_border_color", "yellow_background_color", b"yellow_background_color", "yellow_color", b"yellow_color", "yellow_text_color", b"yellow_text_color"]  # noqa: Y015
     def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
     _WhichOneofReturnType__base_font_size: _TypeAlias = _typing.Literal["base_font_size"]  # noqa: Y015
     _WhichOneofArgType__base_font_size: _TypeAlias = _typing.Literal["_base_font_size", b"_base_font_size"]  # noqa: Y015

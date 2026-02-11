@@ -31,6 +31,11 @@ if sys.version_info >= (3, 10):
 else:
     from typing_extensions import TypeAlias as _TypeAlias
 
+if sys.version_info >= (3, 13):
+    from warnings import deprecated as _deprecated
+else:
+    from typing_extensions import deprecated as _deprecated
+
 DESCRIPTOR: _descriptor.FileDescriptor
 
 @_typing.final
@@ -44,6 +49,7 @@ class Radio(_message.Message):
     HELP_FIELD_NUMBER: _builtins.int
     FORM_ID_FIELD_NUMBER: _builtins.int
     VALUE_FIELD_NUMBER: _builtins.int
+    RAW_VALUE_FIELD_NUMBER: _builtins.int
     SET_VALUE_FIELD_NUMBER: _builtins.int
     DISABLED_FIELD_NUMBER: _builtins.int
     HORIZONTAL_FIELD_NUMBER: _builtins.int
@@ -54,7 +60,13 @@ class Radio(_message.Message):
     default: _builtins.int
     help: _builtins.str
     form_id: _builtins.str
-    value: _builtins.int
+    @_builtins.property
+    @_deprecated("""This field has been marked as deprecated using proto field options.""")
+    def value(self) -> _builtins.int: ...
+    @value.setter
+    @_deprecated("""This field has been marked as deprecated using proto field options.""")
+    def value(self, value: _builtins.int) -> None: ...
+    raw_value: _builtins.str
     set_value: _builtins.bool
     disabled: _builtins.bool
     horizontal: _builtins.bool
@@ -74,22 +86,27 @@ class Radio(_message.Message):
         help: _builtins.str = ...,
         form_id: _builtins.str = ...,
         value: _builtins.int | None = ...,
+        raw_value: _builtins.str | None = ...,
         set_value: _builtins.bool = ...,
         disabled: _builtins.bool = ...,
         horizontal: _builtins.bool = ...,
         label_visibility: _LabelVisibilityMessage_pb2.LabelVisibilityMessage | None = ...,
         captions: _abc.Iterable[_builtins.str] | None = ...,
     ) -> None: ...
-    _HasFieldArgType: _TypeAlias = _typing.Literal["_default", b"_default", "_value", b"_value", "default", b"default", "label_visibility", b"label_visibility", "value", b"value"]  # noqa: Y015
+    _HasFieldArgType: _TypeAlias = _typing.Literal["_default", b"_default", "_raw_value", b"_raw_value", "_value", b"_value", "default", b"default", "label_visibility", b"label_visibility", "raw_value", b"raw_value", "value", b"value"]  # noqa: Y015
     def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-    _ClearFieldArgType: _TypeAlias = _typing.Literal["_default", b"_default", "_value", b"_value", "captions", b"captions", "default", b"default", "disabled", b"disabled", "form_id", b"form_id", "help", b"help", "horizontal", b"horizontal", "id", b"id", "label", b"label", "label_visibility", b"label_visibility", "options", b"options", "set_value", b"set_value", "value", b"value"]  # noqa: Y015
+    _ClearFieldArgType: _TypeAlias = _typing.Literal["_default", b"_default", "_raw_value", b"_raw_value", "_value", b"_value", "captions", b"captions", "default", b"default", "disabled", b"disabled", "form_id", b"form_id", "help", b"help", "horizontal", b"horizontal", "id", b"id", "label", b"label", "label_visibility", b"label_visibility", "options", b"options", "raw_value", b"raw_value", "set_value", b"set_value", "value", b"value"]  # noqa: Y015
     def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
     _WhichOneofReturnType__default: _TypeAlias = _typing.Literal["default"]  # noqa: Y015
     _WhichOneofArgType__default: _TypeAlias = _typing.Literal["_default", b"_default"]  # noqa: Y015
+    _WhichOneofReturnType__raw_value: _TypeAlias = _typing.Literal["raw_value"]  # noqa: Y015
+    _WhichOneofArgType__raw_value: _TypeAlias = _typing.Literal["_raw_value", b"_raw_value"]  # noqa: Y015
     _WhichOneofReturnType__value: _TypeAlias = _typing.Literal["value"]  # noqa: Y015
     _WhichOneofArgType__value: _TypeAlias = _typing.Literal["_value", b"_value"]  # noqa: Y015
     @_typing.overload
     def WhichOneof(self, oneof_group: _WhichOneofArgType__default) -> _WhichOneofReturnType__default | None: ...
+    @_typing.overload
+    def WhichOneof(self, oneof_group: _WhichOneofArgType__raw_value) -> _WhichOneofReturnType__raw_value | None: ...
     @_typing.overload
     def WhichOneof(self, oneof_group: _WhichOneofArgType__value) -> _WhichOneofReturnType__value | None: ...
 

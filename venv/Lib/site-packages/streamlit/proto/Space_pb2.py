@@ -14,14 +14,13 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1bstreamlit/proto/Space.proto\"\x07\n\x05SpaceB*\n\x1c\x63om.snowflake.apps.streamlitB\nSpaceProtob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1bstreamlit/proto/Space.proto\"\x07\n\x05Spaceb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'streamlit.proto.Space_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
-  _globals['DESCRIPTOR']._loaded_options = None
-  _globals['DESCRIPTOR']._serialized_options = b'\n\034com.snowflake.apps.streamlitB\nSpaceProto'
+  DESCRIPTOR._loaded_options = None
   _globals['_SPACE']._serialized_start=31
   _globals['_SPACE']._serialized_end=38
 # @@protoc_insertion_point(module_scope)

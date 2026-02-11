@@ -14,14 +14,13 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n)streamlit/proto/TextAlignmentConfig.proto\x12\tstreamlit\"\x9e\x01\n\x13TextAlignmentConfig\x12;\n\talignment\x18\x01 \x01(\x0e\x32(.streamlit.TextAlignmentConfig.Alignment\"J\n\tAlignment\x12\x0f\n\x0bUNSPECIFIED\x10\x00\x12\x08\n\x04LEFT\x10\x01\x12\n\n\x06\x43\x45NTER\x10\x02\x12\t\n\x05RIGHT\x10\x03\x12\x0b\n\x07JUSTIFY\x10\x04\x42\x38\n\x1c\x63om.snowflake.apps.streamlitB\x18TextAlignmentConfigProtob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n)streamlit/proto/TextAlignmentConfig.proto\x12\tstreamlit\"\x9e\x01\n\x13TextAlignmentConfig\x12;\n\talignment\x18\x01 \x01(\x0e\x32(.streamlit.TextAlignmentConfig.Alignment\"J\n\tAlignment\x12\x0f\n\x0bUNSPECIFIED\x10\x00\x12\x08\n\x04LEFT\x10\x01\x12\n\n\x06\x43\x45NTER\x10\x02\x12\t\n\x05RIGHT\x10\x03\x12\x0b\n\x07JUSTIFY\x10\x04\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'streamlit.proto.TextAlignmentConfig_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
-  _globals['DESCRIPTOR']._loaded_options = None
-  _globals['DESCRIPTOR']._serialized_options = b'\n\034com.snowflake.apps.streamlitB\030TextAlignmentConfigProto'
+  DESCRIPTOR._loaded_options = None
   _globals['_TEXTALIGNMENTCONFIG']._serialized_start=57
   _globals['_TEXTALIGNMENTCONFIG']._serialized_end=215
   _globals['_TEXTALIGNMENTCONFIG_ALIGNMENT']._serialized_start=141

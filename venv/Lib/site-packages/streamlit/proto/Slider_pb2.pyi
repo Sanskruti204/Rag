@@ -96,6 +96,7 @@ class Slider(_message.Message):
     DISABLED_FIELD_NUMBER: _builtins.int
     LABEL_VISIBILITY_FIELD_NUMBER: _builtins.int
     TYPE_FIELD_NUMBER: _builtins.int
+    RAW_VALUE_FIELD_NUMBER: _builtins.int
     id: _builtins.str
     form_id: _builtins.str
     label: _builtins.str
@@ -116,6 +117,12 @@ class Slider(_message.Message):
     def options(self) -> _containers.RepeatedScalarFieldContainer[_builtins.str]: ...
     @_builtins.property
     def label_visibility(self) -> _LabelVisibilityMessage_pb2.LabelVisibilityMessage: ...
+    @_builtins.property
+    def raw_value(self) -> _containers.RepeatedScalarFieldContainer[_builtins.str]:
+        """String-based value for select_slider to support dynamic option changes.
+        Stores formatted option strings instead of indices.
+        """
+
     def __init__(
         self,
         *,
@@ -135,10 +142,11 @@ class Slider(_message.Message):
         disabled: _builtins.bool = ...,
         label_visibility: _LabelVisibilityMessage_pb2.LabelVisibilityMessage | None = ...,
         type: Global___Slider.Type.ValueType = ...,
+        raw_value: _abc.Iterable[_builtins.str] | None = ...,
     ) -> None: ...
     _HasFieldArgType: _TypeAlias = _typing.Literal["label_visibility", b"label_visibility"]  # noqa: Y015
     def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-    _ClearFieldArgType: _TypeAlias = _typing.Literal["data_type", b"data_type", "default", b"default", "disabled", b"disabled", "form_id", b"form_id", "format", b"format", "help", b"help", "id", b"id", "label", b"label", "label_visibility", b"label_visibility", "max", b"max", "min", b"min", "options", b"options", "set_value", b"set_value", "step", b"step", "type", b"type", "value", b"value"]  # noqa: Y015
+    _ClearFieldArgType: _TypeAlias = _typing.Literal["data_type", b"data_type", "default", b"default", "disabled", b"disabled", "form_id", b"form_id", "format", b"format", "help", b"help", "id", b"id", "label", b"label", "label_visibility", b"label_visibility", "max", b"max", "min", b"min", "options", b"options", "raw_value", b"raw_value", "set_value", b"set_value", "step", b"step", "type", b"type", "value", b"value"]  # noqa: Y015
     def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
 
 Global___Slider: _TypeAlias = Slider  # noqa: Y015

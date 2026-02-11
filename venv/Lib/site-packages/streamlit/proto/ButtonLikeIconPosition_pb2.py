@@ -14,14 +14,13 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n,streamlit/proto/ButtonLikeIconPosition.proto\x12\tstreamlit*-\n\x16\x42uttonLikeIconPosition\x12\x08\n\x04LEFT\x10\x00\x12\t\n\x05RIGHT\x10\x01\x42;\n\x1c\x63om.snowflake.apps.streamlitB\x1b\x42uttonLikeIconPositionProtob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n,streamlit/proto/ButtonLikeIconPosition.proto\x12\tstreamlit*-\n\x16\x42uttonLikeIconPosition\x12\x08\n\x04LEFT\x10\x00\x12\t\n\x05RIGHT\x10\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'streamlit.proto.ButtonLikeIconPosition_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
-  _globals['DESCRIPTOR']._loaded_options = None
-  _globals['DESCRIPTOR']._serialized_options = b'\n\034com.snowflake.apps.streamlitB\033ButtonLikeIconPositionProto'
+  DESCRIPTOR._loaded_options = None
   _globals['_BUTTONLIKEICONPOSITION']._serialized_start=59
   _globals['_BUTTONLIKEICONPOSITION']._serialized_end=104
 # @@protoc_insertion_point(module_scope)

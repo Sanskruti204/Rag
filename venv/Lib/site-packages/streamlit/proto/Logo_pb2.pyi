@@ -19,6 +19,7 @@ limitations under the License.
 
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
+from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 import builtins as _builtins
 import sys
 import typing as _typing
@@ -36,14 +37,35 @@ class Logo(_message.Message):
 
     DESCRIPTOR: _descriptor.Descriptor
 
+    class _ImageType:
+        ValueType = _typing.NewType("ValueType", _builtins.int)
+        V: _TypeAlias = ValueType  # noqa: Y015
+
+    class _ImageTypeEnumTypeWrapper(_enum_type_wrapper._EnumTypeWrapper[Logo._ImageType.ValueType], _builtins.type):
+        DESCRIPTOR: _descriptor.EnumDescriptor
+        IMAGE: Logo._ImageType.ValueType  # 0
+        EMOJI: Logo._ImageType.ValueType  # 1
+        ICON: Logo._ImageType.ValueType  # 2
+
+    class ImageType(_ImageType, metaclass=_ImageTypeEnumTypeWrapper):
+        """Type of the logo image (image file, emoji, or material icon)"""
+
+    IMAGE: Logo.ImageType.ValueType  # 0
+    EMOJI: Logo.ImageType.ValueType  # 1
+    ICON: Logo.ImageType.ValueType  # 2
+
     IMAGE_FIELD_NUMBER: _builtins.int
     LINK_FIELD_NUMBER: _builtins.int
     ICON_IMAGE_FIELD_NUMBER: _builtins.int
     SIZE_FIELD_NUMBER: _builtins.int
+    IMAGE_TYPE_FIELD_NUMBER: _builtins.int
+    ICON_IMAGE_TYPE_FIELD_NUMBER: _builtins.int
     image: _builtins.str
     link: _builtins.str
     icon_image: _builtins.str
     size: _builtins.str
+    image_type: Global___Logo.ImageType.ValueType
+    icon_image_type: Global___Logo.ImageType.ValueType
     def __init__(
         self,
         *,
@@ -51,8 +73,10 @@ class Logo(_message.Message):
         link: _builtins.str = ...,
         icon_image: _builtins.str = ...,
         size: _builtins.str = ...,
+        image_type: Global___Logo.ImageType.ValueType = ...,
+        icon_image_type: Global___Logo.ImageType.ValueType = ...,
     ) -> None: ...
-    _ClearFieldArgType: _TypeAlias = _typing.Literal["icon_image", b"icon_image", "image", b"image", "link", b"link", "size", b"size"]  # noqa: Y015
+    _ClearFieldArgType: _TypeAlias = _typing.Literal["icon_image", b"icon_image", "icon_image_type", b"icon_image_type", "image", b"image", "image_type", b"image_type", "link", b"link", "size", b"size"]  # noqa: Y015
     def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
 
 Global___Logo: _TypeAlias = Logo  # noqa: Y015

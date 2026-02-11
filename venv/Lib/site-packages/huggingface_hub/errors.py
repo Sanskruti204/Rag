@@ -406,3 +406,10 @@ class XetRefreshTokenError(XetError):
 
 class XetDownloadError(Exception):
     """Exception thrown when the download from Xet Storage fails."""
+
+
+# CLI ERRORS
+
+
+class CLIError(Exception):
+    """CLI error with clean message (no traceback by default)."""

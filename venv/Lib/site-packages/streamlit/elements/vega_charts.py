@@ -725,6 +725,10 @@ class VegaChartsMixin:
             - An RGB or RGBA tuple with the red, green, blue, and alpha
               components specified as ints from 0 to 255 or floats from 0.0 to
               1.0.
+            - A built-in color name: "red", "orange", "yellow", "green",
+              "blue", "violet", "gray"/"grey", or "primary". These map to
+              theme colors that you can customize using ``theme.<color>Color``
+              configuration options.
 
             For a line chart with multiple lines, where the dataframe is in
             long format (that is, y is None or just one column), this can be:
@@ -753,7 +757,8 @@ class VegaChartsMixin:
             - A list of string colors or color tuples to be used for each of
               the lines in the chart. This list should have the same length
               as the number of y values (e.g. ``color=["#fd0", "#f0f", "#04f"]``
-              for three lines).
+              for three lines). You can also use built-in color names in the
+              list (e.g. ``color=["red", "blue", "green"]``).
 
             You can set the default colors in the ``theme.chartCategoryColors``
             configuration option.
@@ -959,6 +964,10 @@ class VegaChartsMixin:
             - An RGB or RGBA tuple with the red, green, blue, and alpha
               components specified as ints from 0 to 255 or floats from 0.0 to
               1.0.
+            - A built-in color name: "red", "orange", "yellow", "green",
+              "blue", "violet", "gray"/"grey", or "primary". These map to
+              theme colors that you can customize using ``theme.<color>Color``
+              configuration options.
 
             For an area chart with multiple series, where the dataframe is in
             long format (that is, y is None or just one column), this can be:
@@ -987,7 +996,8 @@ class VegaChartsMixin:
             - A list of string colors or color tuples to be used for each of
               the series in the chart. This list should have the same length
               as the number of y values (e.g. ``color=["#fd0", "#f0f", "#04f"]``
-              for three lines).
+              for three lines). You can also use built-in color names in the
+              list (e.g. ``color=["red", "blue", "green"]``).
 
             You can set the default colors in the ``theme.chartCategoryColors``
             configuration option.
@@ -1248,6 +1258,10 @@ class VegaChartsMixin:
             - An RGB or RGBA tuple with the red, green, blue, and alpha
               components specified as ints from 0 to 255 or floats from 0.0 to
               1.0.
+            - A built-in color name: "red", "orange", "yellow", "green",
+              "blue", "violet", "gray"/"grey", or "primary". These map to
+              theme colors that you can customize using ``theme.<color>Color``
+              configuration options.
 
             For a bar chart with multiple series, where the dataframe is in
             long format (that is, y is None or just one column), this can be:
@@ -1276,7 +1290,8 @@ class VegaChartsMixin:
             - A list of string colors or color tuples to be used for each of
               the series in the chart. This list should have the same length
               as the number of y values (e.g. ``color=["#fd0", "#f0f", "#04f"]``
-              for three lines).
+              for three lines). You can also use built-in color names in the
+              list (e.g. ``color=["red", "blue", "green"]``).
 
             You can set the default colors in the ``theme.chartCategoryColors``
             configuration option.
@@ -1575,6 +1590,10 @@ class VegaChartsMixin:
             - An RGB or RGBA tuple with the red, green, blue, and alpha
               components specified as ints from 0 to 255 or floats from 0.0 to
               1.0.
+            - A built-in color name: "red", "orange", "yellow", "green",
+              "blue", "violet", "gray"/"grey", or "primary". These map to
+              theme colors that you can customize using ``theme.<color>Color``
+              configuration options.
             - The name of a column in the dataset where the color of that
               datapoint will come from.
 
@@ -1602,7 +1621,8 @@ class VegaChartsMixin:
             - A list of string colors or color tuples to be used for each of
               the series in the chart. This list should have the same length
               as the number of y values (e.g. ``color=["#fd0", "#f0f", "#04f"]``
-              for three series).
+              for three series). You can also use built-in color names in the
+              list (e.g. ``color=["red", "blue", "green"]``).
 
         size : str, float, int, or None
             The size of the circles representing each point.
@@ -2282,14 +2302,14 @@ class VegaChartsMixin:
 
         See the `vega_lite_chart` method docstring for more information.
         """
-        if theme not in ["streamlit", None]:
+        if theme not in {"streamlit", None}:
             raise StreamlitAPIException(
                 f'You set theme="{theme}" while Streamlit charts only support '
                 "theme=”streamlit” or theme=None to fallback to the default "
                 "library theme."
             )
 
-        if on_select not in ["ignore", "rerun"] and not callable(on_select):
+        if on_select not in {"ignore", "rerun"} and not callable(on_select):
             raise StreamlitAPIException(
                 f"You have passed {on_select} to `on_select`. But only 'ignore', "
                 "'rerun', or a callable is supported."
@@ -2404,7 +2424,10 @@ class VegaChartsMixin:
             vega_lite_proto.id = compute_and_register_element_id(
                 "arrow_vega_lite_chart",
                 user_key=key,
-                key_as_main_identity=False,
+                # There are some edge cases where selections can become orphaned when the data changes.
+                #  The frontend can handle this without errors, but it might be a nice enhancement
+                # to automatically reset the backend & frontend selection state in this case.
+                key_as_main_identity={"selection_mode"},
                 dg=self.dg,
                 vega_lite_spec=vega_lite_proto.spec,
                 # The data is either in vega_lite_proto.data.data

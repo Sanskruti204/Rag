@@ -14,14 +14,13 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1fstreamlit/proto/ArrowData.proto\"\x19\n\tArrowData\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\x42.\n\x1c\x63om.snowflake.apps.streamlitB\x0e\x41rrowDataProtob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1fstreamlit/proto/ArrowData.proto\"\x19\n\tArrowData\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'streamlit.proto.ArrowData_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
-  _globals['DESCRIPTOR']._loaded_options = None
-  _globals['DESCRIPTOR']._serialized_options = b'\n\034com.snowflake.apps.streamlitB\016ArrowDataProto'
+  DESCRIPTOR._loaded_options = None
   _globals['_ARROWDATA']._serialized_start=35
   _globals['_ARROWDATA']._serialized_end=60
 # @@protoc_insertion_point(module_scope)
