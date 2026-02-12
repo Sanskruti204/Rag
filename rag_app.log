@@ -5966,3 +5966,201 @@ SyntaxError: invalid syntax (<string>, line 1)
 2026-02-11 17:21:59,928 - INFO - [BRAIN] Generating concise answer from web search context via LLM
 2026-02-11 17:22:03,064 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
 2026-02-11 17:22:05,286 - INFO - [OK] Web answer generated: As of February 2026, India’s inflation rate was 1.33%. Analysts forecast a rise to 3.9% year-on-year...
+2026-02-11 17:48:49,689 - INFO - ================================================================================
+2026-02-11 17:48:49,692 - INFO - [START] RAG Application Started
+2026-02-11 17:48:49,694 - INFO - ================================================================================
+2026-02-11 17:48:49,701 - INFO - [FOLDER] Document sidebar opened
+2026-02-11 17:48:49,714 - INFO - [Q] User query received: What is the current inflation rate in India as of February 202
+2026-02-11 17:48:49,715 - INFO - [AIM] Query intent detected: general
+2026-02-11 17:48:49,716 - INFO - [DOCS] Searching in document database...
+2026-02-11 17:48:49,721 - INFO - [SEARCH] Retrieving answer for query: What is the current inflation rate in India as of February 202
+2026-02-11 17:48:51,562 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-02-11 17:48:51,566 - WARNING - [ERROR] No documents found for query
+2026-02-11 17:48:51,566 - INFO - [FILE] Document search result: NOT_FOUND
+2026-02-11 17:48:51,572 - INFO - [ERROR] Answer NOT found in documents - asking for web search permission
+2026-02-11 17:48:58,433 - INFO - ================================================================================
+2026-02-11 17:48:58,435 - INFO - [START] RAG Application Started
+2026-02-11 17:48:58,436 - INFO - ================================================================================
+2026-02-11 17:48:58,437 - INFO - [FOLDER] Document sidebar opened
+2026-02-11 17:48:58,441 - INFO - [AIM] Query intent detected: general
+2026-02-11 17:48:58,441 - INFO - [DOCS] Searching in document database...
+2026-02-11 17:48:58,442 - INFO - [SEARCH] Retrieving answer for query: What is the current inflation rate in India as of February 202
+2026-02-11 17:48:58,509 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-02-11 17:48:58,513 - WARNING - [ERROR] No documents found for query
+2026-02-11 17:48:58,515 - INFO - [FILE] Document search result: NOT_FOUND
+2026-02-11 17:48:58,515 - INFO - [ERROR] Answer NOT found in documents - asking for web search permission
+2026-02-11 17:49:09,844 - INFO - ================================================================================
+2026-02-11 17:49:09,845 - INFO - [START] RAG Application Started
+2026-02-11 17:49:09,846 - INFO - ================================================================================
+2026-02-11 17:49:09,846 - INFO - [FOLDER] Document sidebar opened
+2026-02-11 17:49:09,846 - INFO - [UPLOAD] User uploaded 1 file(s)
+2026-02-11 17:49:09,850 - INFO - [FILE] Processing file: CBRICS_ FAQ_0.txt (Type: text/plain)
+2026-02-11 17:49:09,850 - INFO - [SEARCH] Reading text file: CBRICS_ FAQ_0.txt
+2026-02-11 17:49:09,850 - INFO - [PROCESS] Ingesting 1 document(s) into vector store...
+2026-02-11 17:49:09,851 - INFO - [UPLOAD] Starting document ingestion for 1 text(s)
+2026-02-11 17:49:09,853 - INFO - [CHART] Found 0 existing document(s) in vector store
+2026-02-11 17:49:09,853 - INFO - [SEARCH] Processing text 1/1, hash: e59d9a22713acae0da838e38f947cfcd, name: CBRICS_ FAQ_0.txt
+2026-02-11 17:49:09,854 - INFO - [CUT] Split text 1 into 8 chunks
+2026-02-11 17:49:09,854 - INFO - [BRAIN] Embedding 8 chunks into vector store
+2026-02-11 17:49:12,484 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-02-11 17:49:12,538 - INFO - [OK] Embedded batch 1/2
+2026-02-11 17:49:13,819 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-02-11 17:49:13,837 - INFO - [OK] Embedded batch 2/2
+2026-02-11 17:49:14,344 - INFO - [OK] Document ingestion complete. Total embeddings: 8 (added 8)
+2026-02-11 17:49:14,345 - INFO - [OK] Successfully indexed 1 file(s) (added 8 embeddings)
+2026-02-11 17:49:14,345 - INFO - [RETRIEVE] Fetching stored files from vector store
+2026-02-11 17:49:14,348 - INFO - [OK] Retrieved 1 unique file(s): ['CBRICS_ FAQ_0.txt']
+2026-02-11 17:49:14,361 - INFO - [AIM] Query intent detected: general
+2026-02-11 17:49:14,366 - INFO - [DOCS] Searching in document database...
+2026-02-11 17:49:14,382 - INFO - [SEARCH] Retrieving answer for query: What is the current inflation rate in India as of February 202
+2026-02-11 17:49:14,480 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-02-11 17:49:14,488 - INFO - [DOCS] Found 5 relevant document(s)
+2026-02-11 17:49:14,489 - INFO -    1. From 'CBRICS_ FAQ_0.txt': FAQs on CBRICS Version 2.0 October 2022 Disclai...
+2026-02-11 17:49:14,490 - INFO -    2. From 'CBRICS_ FAQ_0.txt': Information in the circulars shall be construed as...
+2026-02-11 17:49:14,492 - INFO -    3. From 'CBRICS_ FAQ_0.txt': How to register as Permanent Registered Participan...
+2026-02-11 17:49:14,492 - INFO -    4. From 'CBRICS_ FAQ_0.txt': Reporting of Trades Approval/ Rejection of Trades...
+2026-02-11 17:49:14,492 - INFO -    5. From 'CBRICS_ FAQ_0.txt': In case of any issue, kindly clear caches/cookies ...
+2026-02-11 17:49:14,493 - INFO - [BRAIN] Generating answer from LLM
+2026-02-11 17:49:26,877 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2026-02-11 17:49:27,017 - WARNING - [NOT_FOUND] LLM response indicates no answer in context: NOT_FOUND
+2026-02-11 17:49:27,018 - INFO - [FILE] Document search result: NOT_FOUND
+2026-02-11 17:49:27,018 - INFO - [ERROR] Answer NOT found in documents - asking for web search permission
+2026-02-11 17:49:36,770 - INFO - ================================================================================
+2026-02-11 17:49:36,771 - INFO - [START] RAG Application Started
+2026-02-11 17:49:36,771 - INFO - ================================================================================
+2026-02-11 17:49:36,775 - INFO - [FOLDER] Document sidebar opened
+2026-02-11 17:49:36,781 - INFO - [AIM] Query intent detected: general
+2026-02-11 17:49:36,782 - INFO - [DOCS] Searching in document database...
+2026-02-11 17:49:36,784 - INFO - [SEARCH] Retrieving answer for query: What is the current inflation rate in India as of February 202
+2026-02-11 17:49:38,161 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-02-11 17:49:38,165 - INFO - [DOCS] Found 5 relevant document(s)
+2026-02-11 17:49:38,165 - INFO -    1. From 'CBRICS_ FAQ_0.txt': FAQs on CBRICS Version 2.0 October 2022 Disclai...
+2026-02-11 17:49:38,165 - INFO -    2. From 'CBRICS_ FAQ_0.txt': Information in the circulars shall be construed as...
+2026-02-11 17:49:38,165 - INFO -    3. From 'CBRICS_ FAQ_0.txt': How to register as Permanent Registered Participan...
+2026-02-11 17:49:38,165 - INFO -    4. From 'CBRICS_ FAQ_0.txt': Reporting of Trades Approval/ Rejection of Trades...
+2026-02-11 17:49:38,165 - INFO -    5. From 'CBRICS_ FAQ_0.txt': In case of any issue, kindly clear caches/cookies ...
+2026-02-11 17:49:38,166 - INFO - [BRAIN] Generating answer from LLM
+2026-02-11 17:49:39,747 - INFO - ================================================================================
+2026-02-11 17:49:39,747 - INFO - [START] RAG Application Started
+2026-02-11 17:49:39,751 - INFO - ================================================================================
+2026-02-11 17:49:39,755 - INFO - [FOLDER] Document sidebar opened
+2026-02-11 17:49:39,759 - INFO - [DELETE] Deleting embeddings for file: CBRICS_ FAQ_0.txt
+2026-02-11 17:49:39,817 - INFO - [OK] Successfully deleted 8 embeddings for 'CBRICS_ FAQ_0.txt'
+2026-02-11 17:49:39,822 - INFO - [LINK] Initializing vector store with Chroma
+2026-02-11 17:49:41,292 - INFO - [OK] Vector store initialized. Current documents: 0
+2026-02-11 17:49:41,292 - INFO - [VERIFY] Embeddings count - Before: 8, After: 0, Deleted: 8
+2026-02-11 17:49:41,292 - INFO - [CONFIRMED] Embeddings for 'CBRICS_ FAQ_0.txt' successfully removed from chroma.sqlite3
+2026-02-11 17:49:41,294 - INFO - [RETRIEVE] Fetching stored files from vector store
+2026-02-11 17:49:41,296 - INFO - [EMPTY] No documents in vector store
+2026-02-11 17:49:41,922 - INFO - ================================================================================
+2026-02-11 17:49:41,923 - INFO - [START] RAG Application Started
+2026-02-11 17:49:41,923 - INFO - ================================================================================
+2026-02-11 17:49:41,926 - INFO - [FOLDER] Document sidebar opened
+2026-02-11 17:49:41,930 - INFO - [AIM] Query intent detected: general
+2026-02-11 17:49:41,930 - INFO - [DOCS] Searching in document database...
+2026-02-11 17:49:41,933 - INFO - [SEARCH] Retrieving answer for query: What is the current inflation rate in India as of February 202
+2026-02-11 17:49:42,033 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-02-11 17:49:42,034 - WARNING - [ERROR] No documents found for query
+2026-02-11 17:49:42,034 - INFO - [FILE] Document search result: NOT_FOUND
+2026-02-11 17:49:42,034 - INFO - [ERROR] Answer NOT found in documents - asking for web search permission
+2026-02-11 17:49:45,186 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2026-02-11 17:49:45,313 - WARNING - [NOT_FOUND] LLM response indicates no answer in context: NOT_FOUND
+2026-02-11 17:51:31,477 - INFO - ================================================================================
+2026-02-11 17:51:31,478 - INFO - [START] RAG Application Started
+2026-02-11 17:51:31,479 - INFO - ================================================================================
+2026-02-11 17:51:31,480 - INFO - [FOLDER] Document sidebar opened
+2026-02-11 17:51:31,482 - INFO - [UPLOAD] User uploaded 1 file(s)
+2026-02-11 17:51:31,484 - INFO - [FILE] Processing file: eIPO - FAQ 2.1_0.txt (Type: text/plain)
+2026-02-11 17:51:31,484 - INFO - [SEARCH] Reading text file: eIPO - FAQ 2.1_0.txt
+2026-02-11 17:51:31,486 - INFO - [PROCESS] Ingesting 1 document(s) into vector store...
+2026-02-11 17:51:31,486 - INFO - [UPLOAD] Starting document ingestion for 1 text(s)
+2026-02-11 17:51:31,488 - INFO - [CHART] Found 0 existing document(s) in vector store
+2026-02-11 17:51:31,488 - INFO - [SEARCH] Processing text 1/1, hash: 89332639aed27d498d0ae314cdb78581, name: eIPO - FAQ 2.1_0.txt
+2026-02-11 17:51:31,489 - INFO - [CUT] Split text 1 into 16 chunks
+2026-02-11 17:51:31,489 - INFO - [BRAIN] Embedding 16 chunks into vector store
+2026-02-11 17:51:34,255 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-02-11 17:51:34,302 - INFO - [OK] Embedded batch 1/4
+2026-02-11 17:51:36,991 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-02-11 17:51:37,037 - INFO - [OK] Embedded batch 2/4
+2026-02-11 17:51:39,813 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-02-11 17:51:39,848 - INFO - [OK] Embedded batch 3/4
+2026-02-11 17:51:40,359 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-02-11 17:51:40,377 - INFO - [OK] Embedded batch 4/4
+2026-02-11 17:51:40,880 - INFO - [OK] Document ingestion complete. Total embeddings: 16 (added 16)
+2026-02-11 17:51:40,881 - INFO - [OK] Successfully indexed 1 file(s) (added 16 embeddings)
+2026-02-11 17:51:40,881 - INFO - [RETRIEVE] Fetching stored files from vector store
+2026-02-11 17:51:40,886 - INFO - [OK] Retrieved 1 unique file(s): ['eIPO - FAQ 2.1_0.txt']
+2026-02-11 17:51:40,892 - INFO - [AIM] Query intent detected: general
+2026-02-11 17:51:40,893 - INFO - [DOCS] Searching in document database...
+2026-02-11 17:51:40,894 - INFO - [SEARCH] Retrieving answer for query: What is the current inflation rate in India as of February 202
+2026-02-11 17:51:40,957 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-02-11 17:51:40,961 - INFO - [DOCS] Found 5 relevant document(s)
+2026-02-11 17:51:40,962 - INFO -    1. From 'eIPO - FAQ 2.1_0.txt': Has NSE issued any official circular regarding the...
+2026-02-11 17:51:40,962 - INFO -    2. From 'eIPO - FAQ 2.1_0.txt': application size of above Rs 2 lakhs. How are app...
+2026-02-11 17:51:40,962 - INFO -    3. From 'eIPO - FAQ 2.1_0.txt': as provided herein and in the circulars, the Infor...
+2026-02-11 17:51:40,962 - INFO -    4. From 'eIPO - FAQ 2.1_0.txt': FAQs on e-IPO Version 2.1 July 2025 Disclaimer:...
+2026-02-11 17:51:40,963 - INFO -    5. From 'eIPO - FAQ 2.1_0.txt': details of the bids entered against the registered...
+2026-02-11 17:51:40,963 - INFO - [BRAIN] Generating answer from LLM
+2026-02-11 17:51:48,327 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2026-02-11 17:51:48,461 - WARNING - [NOT_FOUND] LLM response indicates no answer in context: NOT_FOUND
+2026-02-11 17:51:48,464 - INFO - [FILE] Document search result: NOT_FOUND
+2026-02-11 17:51:48,465 - INFO - [ERROR] Answer NOT found in documents - asking for web search permission
+2026-02-11 17:52:06,966 - INFO - ================================================================================
+2026-02-11 17:52:06,967 - INFO - [START] RAG Application Started
+2026-02-11 17:52:06,967 - INFO - ================================================================================
+2026-02-11 17:52:06,970 - INFO - [FOLDER] Document sidebar opened
+2026-02-11 17:52:06,974 - INFO - [UPLOAD] User uploaded 1 file(s)
+2026-02-11 17:52:06,976 - INFO - [FILE] Processing file: eIPO - FAQ 2.1_0.txt (Type: text/plain)
+2026-02-11 17:52:06,977 - INFO - [SEARCH] Reading text file: eIPO - FAQ 2.1_0.txt
+2026-02-11 17:52:06,977 - INFO - [PROCESS] Ingesting 1 document(s) into vector store...
+2026-02-11 17:52:06,978 - INFO - [UPLOAD] Starting document ingestion for 1 text(s)
+2026-02-11 17:52:06,982 - INFO - [CHART] Found 16 existing document(s) in vector store
+2026-02-11 17:52:06,982 - INFO - [SEARCH] Processing text 1/1, hash: 89332639aed27d498d0ae314cdb78581, name: eIPO - FAQ 2.1_0.txt
+2026-02-11 17:52:06,983 - WARNING - [NEXT] Document 'eIPO - FAQ 2.1_0.txt' already exists in vector store, skipping
+2026-02-11 17:52:06,983 - WARNING - [WARN] No new chunks to embed
+2026-02-11 17:52:06,984 - WARNING - [WARN] All files were duplicates - no new embeddings added
+2026-02-11 17:52:06,990 - INFO - [DELETE] Starting to delete all embeddings
+2026-02-11 17:52:06,994 - INFO - [COUNT] Embeddings before deletion: 16
+2026-02-11 17:52:07,082 - INFO - [OK] Successfully deleted 16 embeddings from vector store
+2026-02-11 17:52:07,087 - INFO - [LINK] Initializing vector store with Chroma
+2026-02-11 17:52:08,333 - INFO - [OK] Vector store initialized. Current documents: 0
+2026-02-11 17:52:08,336 - INFO - [VERIFY] Embeddings count - Before: 16, After: 0
+2026-02-11 17:52:08,337 - INFO - [CONFIRMED] All embeddings successfully removed from chroma.sqlite3
+2026-02-11 17:52:08,936 - INFO - ================================================================================
+2026-02-11 17:52:08,938 - INFO - [START] RAG Application Started
+2026-02-11 17:52:08,938 - INFO - ================================================================================
+2026-02-11 17:52:08,940 - INFO - [FOLDER] Document sidebar opened
+2026-02-11 17:52:08,941 - INFO - [UPLOAD] User uploaded 1 file(s)
+2026-02-11 17:52:08,944 - INFO - [FILE] Processing file: eIPO - FAQ 2.1_0.txt (Type: text/plain)
+2026-02-11 17:52:08,944 - INFO - [SEARCH] Reading text file: eIPO - FAQ 2.1_0.txt
+2026-02-11 17:52:08,944 - INFO - [PROCESS] Ingesting 1 document(s) into vector store...
+2026-02-11 17:52:08,945 - INFO - [UPLOAD] Starting document ingestion for 1 text(s)
+2026-02-11 17:52:08,946 - INFO - [CHART] Found 0 existing document(s) in vector store
+2026-02-11 17:52:08,947 - INFO - [SEARCH] Processing text 1/1, hash: 89332639aed27d498d0ae314cdb78581, name: eIPO - FAQ 2.1_0.txt
+2026-02-11 17:52:08,947 - INFO - [CUT] Split text 1 into 16 chunks
+2026-02-11 17:52:08,947 - INFO - [BRAIN] Embedding 16 chunks into vector store
+2026-02-11 17:52:11,690 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-02-11 17:52:11,768 - INFO - [OK] Embedded batch 1/4
+2026-02-11 17:52:14,414 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-02-11 17:52:14,454 - INFO - [OK] Embedded batch 2/4
+2026-02-11 17:52:15,688 - INFO - ================================================================================
+2026-02-11 17:52:15,689 - INFO - [START] RAG Application Started
+2026-02-11 17:52:15,693 - INFO - ================================================================================
+2026-02-11 17:52:15,695 - INFO - [FOLDER] Document sidebar opened
+2026-02-11 17:52:15,701 - INFO - [AIM] Query intent detected: general
+2026-02-11 17:52:15,702 - INFO - [DOCS] Searching in document database...
+2026-02-11 17:52:15,705 - INFO - [SEARCH] Retrieving answer for query: What is the current inflation rate in India as of February 202
+2026-02-11 17:52:17,154 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-02-11 17:52:17,182 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-02-11 17:52:17,183 - INFO - [OK] Embedded batch 3/4
+2026-02-11 17:52:17,279 - INFO - [DOCS] Found 5 relevant document(s)
+2026-02-11 17:52:17,281 - INFO -    1. From 'eIPO - FAQ 2.1_0.txt': Has NSE issued any official circular regarding the...
+2026-02-11 17:52:17,281 - INFO -    2. From 'eIPO - FAQ 2.1_0.txt': application size of above Rs 2 lakhs. How are app...
+2026-02-11 17:52:17,281 - INFO -    3. From 'eIPO - FAQ 2.1_0.txt': as provided herein and in the circulars, the Infor...
+2026-02-11 17:52:17,281 - INFO -    4. From 'eIPO - FAQ 2.1_0.txt': FAQs on e-IPO Version 2.1 July 2025 Disclaimer:...
+2026-02-11 17:52:17,282 - INFO -    5. From 'eIPO - FAQ 2.1_0.txt': details of the bids entered against the registered...
+2026-02-11 17:52:17,283 - INFO - [BRAIN] Generating answer from LLM
+2026-02-11 17:52:24,678 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2026-02-11 17:52:24,811 - WARNING - [NOT_FOUND] LLM response indicates no answer in context: NOT_FOUND
+2026-02-11 17:52:24,811 - INFO - [FILE] Document search result: NOT_FOUND
+2026-02-11 17:52:24,811 - INFO - [ERROR] Answer NOT found in documents - asking for web search permission
